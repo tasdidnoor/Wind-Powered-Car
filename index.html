@@ -200,16 +200,50 @@
             const pmremGenerator = new THREE.PMREMGenerator(renderer);
             scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
 
-            // Lighting
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
-            scene.add(ambientLight);
+            // --- Advanced Studio Lighting ---
+            
+            // 1. Soft base light (Hemisphere) to ensure no part is pitch black
+            const hemiLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.6);
+            scene.add(hemiLight);
 
-            const spotLight = new THREE.SpotLight(0xffffff, 5);
-            spotLight.position.set(100, 200, 100);
-            spotLight.angle = 0.5;
-            spotLight.penumbra = 0.5;
+            // 2. Key Light (Main source)
+            const spotLight = new THREE.SpotLight(0xffffff, 150);
+            spotLight.position.set(100, 150, 100);
+            spotLight.angle = 0.4;
+            spotLight.penumbra = 1;
             spotLight.castShadow = true;
+            spotLight.shadow.mapSize.width = 2048;
+            spotLight.shadow.mapSize.height = 2048;
             scene.add(spotLight);
+
+            // 3. Rim Light 1 (Back-Left - creates the "edge" glow)
+            const rim1 = new THREE.PointLight(0xffffff, 80);
+            rim1.position.set(-150, 100, -150);
+            scene.add(rim1);
+
+            // 4. Rim Light 2 (Back-Right)
+            const rim2 = new THREE.PointLight(0xffffff, 80);
+            rim2.position.set(150, 80, -100);
+            scene.add(rim2);
+
+            // 5. Front Fill (Softens shadows)
+            const fill = new THREE.PointLight(0xffffff, 30);
+            fill.position.set(0, 50, 200);
+            scene.add(fill);
+
+            // Subtle Reflective Floor (to ground the model)
+            const meshFloor = new THREE.Mesh(
+                new THREE.PlaneGeometry(2000, 2000),
+                new THREE.MeshStandardMaterial({ 
+                    color: 0x030303, 
+                    roughness: 0.2, 
+                    metalness: 0.5 
+                })
+            );
+            meshFloor.rotation.x = -Math.PI / 2;
+            meshFloor.position.y = -25;
+            meshFloor.receiveShadow = true;
+            scene.add(meshFloor);
 
             controls = new OrbitControls(camera, renderer.domElement);
             controls.enableDamping = true;
