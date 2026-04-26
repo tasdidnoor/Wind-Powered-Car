@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Cyber-Blade X | Preview</title>
+    <title>Wind-Powered Car</title>
     <style>
         :root {
-            --bg-color: #f5f5f7;
-            --glass-bg: rgba(255, 255, 255, 0.75);
-            --accent-color: #007aff;
-            --text-color: #1d1d1f;
-            --border-color: rgba(255, 255, 255, 0.4);
+            --bg-color: #030303; /* Rich designer black */
+            --glass-bg: rgba(20, 20, 20, 0.6);
+            --accent-color: #ffffff;
+            --text-color: #ffffff;
+            --border-color: rgba(255, 255, 255, 0.1);
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             overflow: hidden;
@@ -27,7 +27,6 @@
             align-items: center;
             height: 100vh;
             -webkit-font-smoothing: antialiased;
-            -webkit-tap-highlight-color: transparent;
         }
 
         #container {
@@ -38,129 +37,98 @@
         }
         #container:active { cursor: grabbing; }
 
-        /* Responsive Header */
         .header {
             position: absolute;
-            top: env(safe-area-inset-top, 40px);
+            top: 60px;
             text-align: center;
             z-index: 10;
             pointer-events: none;
             width: 100%;
-            transition: all 0.3s ease;
         }
 
         .header h1 {
-            font-weight: 600;
+            font-weight: 500;
             font-size: 28px;
             margin: 0;
-            letter-spacing: -0.8px;
-        }
-
-        .header p {
-            font-weight: 500;
-            font-size: 12px;
-            opacity: 0.5;
-            margin-top: 6px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            color: #ffffff;
+            opacity: 0.9;
         }
 
-        @media (min-width: 1024px) {
-            .header h1 { font-size: 42px; }
-            .header p { font-size: 14px; }
-            .header { top: 60px; }
+        @media (max-width: 768px) {
+            .header { top: 40px; }
+            .header h1 { font-size: 20px; letter-spacing: 1px; }
         }
 
-        /* Responsive Floating Controls */
         .controls-container {
             position: absolute;
-            bottom: env(safe-area-inset-bottom, 40px);
+            bottom: 80px;
             width: 100%;
             display: flex;
             justify-content: center;
             pointer-events: none;
-            padding-bottom: 20px;
         }
 
         .controls {
             background: var(--glass-bg);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            padding: 14px 24px;
-            border-radius: 50px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 12px 24px;
+            border-radius: 40px;
             display: flex;
-            gap: 16px;
+            gap: 15px;
             align-items: center;
             pointer-events: auto;
             border: 1px solid var(--border-color);
-            max-width: 85vw;
-            overflow-x: auto;
-            scrollbar-width: none; /* Firefox */
         }
-        .controls::-webkit-scrollbar { display: none; } /* Safari/Chrome */
 
         .color-dot {
-            width: 34px;
-            height: 34px;
-            min-width: 34px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-            border: 2px solid transparent;
-            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
-            position: relative;
-        }
-
-        /* Desktop Hover Effects */
-        @media (hover: hover) {
-            .color-dot:hover {
-                transform: scale(1.25) translateY(-4px);
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            }
+            transition: all 0.3s ease;
+            border: 1.5px solid transparent;
         }
 
         .color-dot.active {
-            border-color: var(--text-color);
-            transform: scale(1.1);
+            border-color: #ffffff;
+            transform: scale(1.2);
         }
 
-        @media (min-width: 1024px) {
-            .controls { padding: 18px 32px; gap: 20px; }
-            .color-dot { width: 38px; height: 38px; min-width: 38px; }
-        }
-
-        /* Footer Branding */
         .footer {
             position: absolute;
-            bottom: 12px;
+            bottom: 30px;
             font-size: 10px;
-            opacity: 0.3;
+            font-weight: 400;
+            opacity: 0.5;
             pointer-events: none;
             text-align: center;
             width: 100%;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #fff;
         }
 
-        /* Loading Screen */
         #loader {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-color);
+            background: #000;
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 100;
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 1s ease;
         }
 
         .spinner {
-            width: 32px;
-            height: 32px;
-            border: 2px solid rgba(0,0,0,0.05);
-            border-top: 2px solid var(--accent-color);
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid #fff;
             border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+            animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
@@ -174,26 +142,24 @@
     <div id="loader"><div class="spinner"></div></div>
 
     <div class="header">
-        <h1>Cyber-Blade X</h1>
-        <p>Young Engineers Prototype</p>
+        <h1>Wind-Powered Car</h1>
     </div>
 
     <div id="container"></div>
 
     <div class="controls-container">
         <div class="controls">
-            <div class="color-dot active" style="background: #1d1d1f;" onclick="updateColor('#1d1d1f', this)"></div>
-            <div class="color-dot" style="background: #e30613;" onclick="updateColor('#e30613', this)"></div>
-            <div class="color-dot" style="background: #007aff;" onclick="updateColor('#007aff', this)"></div>
-            <div class="color-dot" style="background: #34c759;" onclick="updateColor('#34c759', this)"></div>
-            <div class="color-dot" style="background: #ffcc00;" onclick="updateColor('#ffcc00', this)"></div>
-            <div class="color-dot" style="background: #ffffff;" onclick="updateColor('#ffffff', this)"></div>
-            <div class="color-dot" style="background: #8e8e93;" onclick="updateColor('#8e8e93', this)"></div>
-            <div class="color-dot" style="background: #af52de;" onclick="updateColor('#af52de', this)"></div>
+            <!-- Refined metallic color palette -->
+            <div class="color-dot active" style="background: #0a0a0a;" onclick="updateColor('#0a0a0a', this, 0.1, 0.9)"></div>
+            <div class="color-dot" style="background: #7a0000;" onclick="updateColor('#7a0000', this, 0.2, 0.8)"></div>
+            <div class="color-dot" style="background: #001f5c;" onclick="updateColor('#001f5c', this, 0.2, 0.8)"></div>
+            <div class="color-dot" style="background: #00331a;" onclick="updateColor('#00331a', this, 0.2, 0.8)"></div>
+            <div class="color-dot" style="background: #5c5c5c;" onclick="updateColor('#5c5c5c', this, 0.1, 1.0)"></div>
+            <div class="color-dot" style="background: #e0e0e0;" onclick="updateColor('#e0e0e0', this, 0.1, 0.5)"></div>
         </div>
     </div>
 
-    <div class="footer">ENGINEERING DEPARTMENT · INTERNAL PREVIEW</div>
+    <div class="footer">Copyright Tasdid noor, 2026</div>
 
     <script type="importmap">
         {
@@ -208,67 +174,65 @@
         import * as THREE from 'three';
         import { STLLoader } from 'three/addons/loaders/STLLoader.js';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
         let scene, camera, renderer, model, controls;
 
         function init() {
             scene = new THREE.Scene();
-            scene.background = new THREE.Color(0xf5f5f7);
+            scene.background = new THREE.Color(0x030303);
 
-            camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.set(180, 110, 180);
+            camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(200, 120, 200);
 
             renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
             renderer.setSize(window.innerWidth, window.innerHeight);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            
             renderer.shadowMap.enabled = true;
             renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.0;
+            
             document.getElementById('container').appendChild(renderer.domElement);
 
-            // High-End Studio Lighting
-            const ambientLight = new THREE.AmbientLight(0xffffff, 1.3);
+            // Environment setup for detailed reflections
+            const pmremGenerator = new THREE.PMREMGenerator(renderer);
+            scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
             scene.add(ambientLight);
 
-            const spotLight = new THREE.SpotLight(0xffffff, 2.5);
-            spotLight.position.set(100, 150, 100);
+            const spotLight = new THREE.SpotLight(0xffffff, 5);
+            spotLight.position.set(100, 200, 100);
             spotLight.angle = 0.5;
             spotLight.penumbra = 0.5;
             spotLight.castShadow = true;
-            spotLight.shadow.bias = -0.0001;
             scene.add(spotLight);
-
-            const fillLight = new THREE.DirectionalLight(0xffffff, 1);
-            fillLight.position.set(-100, 50, -50);
-            scene.add(fillLight);
-
-            // Soft Ground Shadow
-            const planeGeometry = new THREE.PlaneGeometry(2000, 2000);
-            const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.06 });
-            const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-            plane.rotation.x = -Math.PI / 2;
-            plane.position.y = -20;
-            plane.receiveShadow = true;
-            scene.add(plane);
 
             controls = new OrbitControls(camera, renderer.domElement);
             controls.enableDamping = true;
-            controls.dampingFactor = 0.06;
+            controls.dampingFactor = 0.05;
             controls.autoRotate = true;
-            controls.autoRotateSpeed = 0.8;
-            controls.minDistance = 100;
-            controls.maxDistance = 400;
+            controls.autoRotateSpeed = 0.4;
+            controls.minDistance = 150;
+            controls.maxDistance = 450;
             controls.enablePan = false;
 
             const loader = new STLLoader();
             loader.load('./model.stl', function (geometry) {
-                const material = new THREE.MeshStandardMaterial({ 
-                    color: 0x1d1d1f, 
-                    roughness: 0.35, 
-                    metalness: 0.18,
-                    flatShading: false
+                const material = new THREE.MeshPhysicalMaterial({ 
+                    color: 0x0a0a0a, 
+                    roughness: 0.1, 
+                    metalness: 0.9,
+                    clearcoat: 1.0,
+                    clearcoatRoughness: 0.02,
+                    reflectivity: 1.0
                 });
-                model = new THREE.Mesh(geometry, material);
                 
+                model = new THREE.Mesh(geometry, material);
+                geometry.computeVertexNormals();
                 geometry.computeBoundingBox();
                 const center = new THREE.Vector3();
                 geometry.boundingBox.getCenter(center);
@@ -281,8 +245,7 @@
                 document.getElementById('loader').style.opacity = '0';
                 setTimeout(() => {
                     document.getElementById('loader').style.display = 'none';
-                    controls.autoRotate = false;
-                }, 800);
+                }, 1000);
             });
 
             window.addEventListener('resize', onWindowResize, false);
@@ -301,15 +264,14 @@
             renderer.render(scene, camera);
         }
 
-        window.updateColor = function(colorStr, el) {
+        window.updateColor = function(colorStr, el, roughness = 0.1, metalness = 0.9) {
             if (!model) return;
             model.material.color.set(colorStr);
+            model.material.roughness = roughness;
+            model.material.metalness = metalness;
+            
             document.querySelectorAll('.color-dot').forEach(dot => dot.classList.remove('active'));
             el.classList.add('active');
-            
-            // Subtle Scale Bump on Click
-            el.style.transform = 'scale(1.3)';
-            setTimeout(() => el.style.transform = '', 150);
         }
 
         init();
