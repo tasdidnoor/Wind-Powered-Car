@@ -2,7 +2,7 @@
 
 A 3D-printed car project designed for **Young Engineers** to teach students about different types of energy, specifically wind energy and its conversion into mechanical motion. This project features a modular 3D-printed body where students can experiment with different wheel sizes and sail designs to optimize performance.
 
-Live Preview: `https://tasdidnoor.com/WindPoweredCar/`
+Live Preview: [tasdidnoor.com/WindPoweredCar](https://tasdidnoor.com/WindPoweredCar/)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/WindCar1.png" width="48%" alt="Wind Car 1" />
