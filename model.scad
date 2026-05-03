@@ -1,5 +1,5 @@
-// Wind Powered Car Base - "THE CYBER-BLADE X" (FINALFINAL Edition)
-// 8.5cm Length, 8cm Wide, Flat Top, Detailed Bottom, 0.5cm Axle Holes
+// Wind Powered Car Chassis
+// 8.5cm Length, 8cm Wide, Flat Top, 0.5cm Axle Holes
 
 total_length = 85;    // 8.5 cm
 sleeve_width = 80;    // 8 cm
