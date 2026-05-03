@@ -9,7 +9,7 @@ Live Preview: `https://tasdidnoor.com/WindPoweredCar/`
   <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/WindCar2.png" width="48%" alt="Wind Car 2" />
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/tasdidnoor/WindPoweredCar/main/SketchInit.png" width="97%" alt="Initial Sketch" />
+  <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/SketchInit.png" width="97%" alt="Initial Sketch" />
 </p>
 
 ---
