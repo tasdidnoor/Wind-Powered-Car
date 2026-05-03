@@ -5,11 +5,8 @@ A 3D-printed car project designed for **Young Engineers** to teach students abou
 Live Preview: `https://tasdidnoor.com/WindPoweredCar/`
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/WindCar1.png" width="48%" alt="Wind Car Front" />
-  <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/WindCar2.png" width="48%" alt="Wind Car Side" />
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/Sail.png" width="97%" alt="Sail Design" />
+  <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/WindCar1.png" width="48%" alt="Wind Car 1" />
+  <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/WindCar2.png" width="48%" alt="Wind Car 2" />
 </p>
 <p align="center">
   <img src="https://raw.githubusercontent.com/tasdidnoor/WindPoweredCar/main/SketchInit.png" width="97%" alt="Initial Sketch" />
@@ -52,12 +49,12 @@ The repository includes an interactive 3D web preview using **Three.js**. This a
 
 ---
 
-## 📸 Media Gallery
+## Media Gallery
 
 ### Build Components
 | | | | |
 | :---: | :---: | :---: | :---: |
-| <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/Wheel.png" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/PopsicleStick.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/RoundStick.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/WindCar1.png" width="200" /> |
-| Wheel Design | Component Test | Frame Material | Completed Car |
+| <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/Wheel.png" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/PopsicleStick.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/RoundStick.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/Sail.png" width="200" /> |
+| Wheel Design | Component Test | Frame Material | Sail |
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
