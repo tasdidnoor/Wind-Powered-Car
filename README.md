@@ -55,6 +55,6 @@ The repository includes an interactive 3D web preview using **Three.js**. This a
 | | | | |
 | :---: | :---: | :---: | :---: |
 | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/Wheel.png" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/PopsicleStick.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/RoundStick.jpg" width="200" /> | <img src="https://raw.githubusercontent.com/tasdidnoor/Assets/main/WindPoweredCar/Sail.png" width="200" /> |
-| Wheel Design | Component Test | Frame Material | Sail |
+| Wheel Design | Popsicle Stick (Sail Spine) | Wheel Axle | Sail |
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
